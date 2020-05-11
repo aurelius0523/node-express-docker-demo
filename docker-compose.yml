@@ -1,0 +1,19 @@
+version: '3'
+services:
+  express-server:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      PGURL: "postgres://postgres:admin@host.docker.internal:35432/demo"
+  postgresql:
+    image: "postgres:12"
+    ports:
+      - "35432:5432"
+    environment:
+      POSTGRES_PASSWORD: admin
+      POSTGRES_USER: postgres
+#      POSTGRES_DB: demo
+    # this will copy init.sql to docker-entryping-initdb.d directory in container and execute the script
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
