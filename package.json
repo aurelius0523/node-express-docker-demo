@@ -17,7 +17,7 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "pg-promise": "^10.5.5",
-    "pug": "^2.0.4",
+    "pug": "^3.0.1",
     "swagger-jsdoc": "^4.0.0",
     "swagger-ui-express": "^4.1.4"
   },
